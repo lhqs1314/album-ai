@@ -11,6 +11,7 @@ services:
       - POSTGRES_DATABASE=album
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=123456
+      - SERVER_PORT=8080
       - SIMILARITY_SCORE=0.8
       - MAX_SEARCH_LIMIT=10
       - IMAGE_EXTRACT_PROVIDER=openai
