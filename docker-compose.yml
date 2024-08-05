@@ -20,6 +20,8 @@ services:
     tty: true
     ports:
       - "8099:8080"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
     env_file:
       - .env.prod
     volumes:
