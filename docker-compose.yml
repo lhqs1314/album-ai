@@ -5,6 +5,10 @@ services:
       dockerfile: PG_Dockerfile
     ports:
       - "5432:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: album
   album-ai:
     depends_on:
       - postgres
