@@ -1,0 +1,10 @@
+# 使用 pgvector 的 PostgreSQL 版本作为基础镜像
+FROM pgvector/pgvector:pg16
+
+# 将 SQL 脚本添加到镜像中
+COPY ./sql/project.sql /docker-entrypoint-initdb.d/init.sql
+
+# 设置环境变量
+ENV POSTGRES_USER=root \
+    POSTGRES_PASSWORD=123456 \
+    POSTGRES_DB=album
