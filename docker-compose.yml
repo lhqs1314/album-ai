@@ -10,6 +10,8 @@ services:
     volumes:
       - ./sql/project.sql:/docker-entrypoint-initdb.d/init.sql
       - /tmp/postgres/data:/var/lib/postgresql/data
+    networks:
+      webnet2:
   album-ai:
     depends_on:
       - postgres
@@ -26,3 +28,8 @@ services:
       - .env.prod
     volumes:
       - ./images:/home/images
+    networks:
+      webnet2:
+
+networks:
+  webnet2:
